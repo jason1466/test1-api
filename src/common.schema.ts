@@ -3,9 +3,9 @@ import * as mongoose from 'mongoose';
 export const CommonSchema = new mongoose.Schema(
   {
     id: String,
-    created: Date,
+    createdAt: Date,
     createdBy: String,
-    updated: Date,
+    updatedAt: Date,
     updatedBy: String,
   },
   { discriminatorKey: '_type' },

@@ -1,14 +1,12 @@
 import { Document } from 'mongoose';
 
-export interface User extends Document {
+export interface Club extends Document {
   readonly id: String;
   readonly createdAt: Date;
   readonly createdBy: String;
   readonly updatedAt: Date;
   readonly updatedBy: String;
+  readonly name: String;
+  readonly description: String;
   readonly email: String;
-  readonly token: String;
-  readonly username: String;
-  readonly image: String;
-  readonly bio: String;
 }
