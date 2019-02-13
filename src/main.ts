@@ -10,7 +10,7 @@ async function bootstrap() {
   const options = new DocumentBuilder()
     .setTitle('NestJS Test Example App')
     .setDescription('The TeamWiz API description')
-    .setVersion('1.0')
+    .setVersion('0.1')
     .setBasePath('api')
     .addBearerAuth()
     .setSchemes('https')
