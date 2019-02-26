@@ -13,12 +13,12 @@ async function bootstrap() {
     .setVersion('0.1')
     .setBasePath('api')
     .addBearerAuth()
-    //.setSchemes('https')
+    .setSchemes('https')
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('/api/docs', app, document);
 
   // app.enableCors();
-  await app.listen(3000);
+  await app.listen(process.env.PORT);
 }
 bootstrap();
