@@ -3,10 +3,9 @@ import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
-  const appOptions = {
-    cors: true,
-    credentials: true,
-  };
+  // const appOptions = {
+  //   cors: true,
+  // };
   const app = await NestFactory.create(AppModule, appOptions);
   app.setGlobalPrefix('api');
 
@@ -21,7 +20,18 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('/api/docs', app, document);
 
-  // app.enableCors();
+  app.enableCors({
+    // origin: ‘http://localhost:4200’
+    credentials: true,
+    // origin?: boolean | string | RegExp | (string | RegExp)[] | CustomOrigin;
+    // methods?: string | string[];
+    // allowedHeaders?: string | string[];
+    // exposedHeaders?: string | string[];
+    // credentials?: boolean;
+    // maxAge?: number;
+    // preflightContinue?: boolean;
+    // optionsSuccessStatus?: number;
+  });
   await app.listen(process.env.PORT);
 }
 bootstrap();
