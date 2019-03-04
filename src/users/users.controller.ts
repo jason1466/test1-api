@@ -18,7 +18,7 @@ export class UsersController {
   @Get()
   async findAll(): Promise<User[]> {
     this.usersService.me = await this.http
-      .get<any>('/.auth/me')
+      .get<any>('https://teamwizapp.azurewebsites.net/.auth/me')
       .toPromise()
       .then(x => x[0]);
     console.log('me: ' + JSON.stringify(this.usersService.me));
