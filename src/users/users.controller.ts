@@ -21,7 +21,7 @@ export class UsersController {
       .get('https://teamwizapp.azurewebsites.net/.auth/me')
       .toPromise()
       .then(x => x[0]);
-    console.log('me: ' + JSON.stringify(this.usersService.me));
+    // console.log('me: ' + JSON.stringify(this.usersService.me));
 
     return this.usersService.findAll();
   }
