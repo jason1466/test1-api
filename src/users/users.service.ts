@@ -1,5 +1,5 @@
 import { Model } from 'mongoose';
-import { Injectable, HttpService } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { User } from './user.interface';
 import { CreateUserDto } from './create-user.dto';
 import { InjectModel } from '@nestjs/mongoose';
@@ -10,7 +10,6 @@ import { UserSchema } from './user.schema';
 export class UsersService {
   constructor(
     @InjectModel('Common') private readonly commonModel: Model<Common>,
-    private readonly http: HttpService,
   ) {}
 
   userModel = this.commonModel.discriminator<User>('User', UserSchema);
@@ -24,11 +23,6 @@ export class UsersService {
     //   createdBy: 'Jason',
     // } as User)
     // );
-    this.me = await this.http
-      .get<any>('/.auth/me')
-      .toPromise()
-      .then(x => x[0]);
-    console.log('me: ' + JSON.stringify(this.me));
     return await createdUser.save();
   }
 
