@@ -4,12 +4,12 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const appOptions = {
-    cors: true,
+    // cors: true,
   };
   const app = await NestFactory.create(AppModule, appOptions);
   app.setGlobalPrefix('api');
 
-  const options = new DocumentBuilder()
+  const swaggerOptions = new DocumentBuilder()
     .setTitle('NestJS Test Example App')
     .setDescription('The TeamWiz API description')
     .setVersion('0.1')
@@ -17,7 +17,7 @@ async function bootstrap() {
     .addBearerAuth()
     .setSchemes('https')
     .build();
-  const document = SwaggerModule.createDocument(app, options);
+  const document = SwaggerModule.createDocument(app, swaggerOptions);
   SwaggerModule.setup('/api/docs', app, document);
 
   // app.enableCors({
