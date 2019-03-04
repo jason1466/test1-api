@@ -15,7 +15,13 @@ export class UsersService {
   userModel = this.commonModel.discriminator<User>('User', UserSchema);
 
   async create(createUserDto: CreateUserDto): Promise<User> {
-    const createdUser = new this.userModel(createUserDto);
+    const createdUser: User = new this.userModel(createUserDto);
+    //   ...(createUserDto as User),
+    //   ...({
+    //     createdAt: new Date().toISOString(),
+    //     createdBy: 'Jason',
+    //   } as User),
+    // );
     return await createdUser.save();
   }
 

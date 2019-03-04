@@ -15,7 +15,9 @@ export class ClubsService {
   clubModel = this.commonModel.discriminator<Club>('Club', ClubSchema);
 
   async create(createClubDto: CreateClubDto): Promise<Club> {
-    const createdClub = new this.clubModel(createClubDto);
+    let createdClub = new this.clubModel(createClubDto);
+    // createdUser.createdAt = new Date();
+    // createdUser.createdBy = 'Jason';
     return await createdClub.save();
   }
 
