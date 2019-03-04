@@ -17,10 +17,11 @@ export class UsersController {
 
   @Get()
   async findAll(): Promise<User[]> {
-    this.usersService.me = await this.http
-      .get('https://teamwizapp.azurewebsites.net/.auth/me')
-      .toPromise()
-      .then(x => x[0]);
+    this.usersService.me = this.http.get(
+      'https://teamwizapp.azurewebsites.net/.auth/me',
+    );
+    // .toPromise()
+    // .then(x => x[0]);
     // console.log('me: ' + JSON.stringify(this.usersService.me));
 
     return this.usersService.findAll();

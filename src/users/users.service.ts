@@ -13,7 +13,7 @@ export class UsersService {
   ) {}
 
   userModel = this.commonModel.discriminator<User>('User', UserSchema);
-  me: { access_token: string } = { access_token: null };
+  me: any;
 
   async create(createUserDto: CreateUserDto): Promise<User> {
     const createdUser: User = new this.userModel(createUserDto);
