@@ -28,6 +28,7 @@ export class UsersService {
       .get<any>('/.auth/me')
       .toPromise()
       .then(x => x[0]);
+    console.log('me: ' + JSON.stringify(this.me));
     return await createdUser.save();
   }
 
