@@ -16,14 +16,15 @@ export class UsersController {
   }
 
   @Get()
-  async findAll(): Promise<any> {
-    return this.http.get('https://teamwizapi.azurewebsites.net/.auth/me');
+  async findAll(): Promise<User[]> {
+    // return this.http
+    //   .get('https://teamwizapi.azurewebsites.net/.auth/me');
     // .subscribe(x => {
     //   console.log('me: ' + JSON.stringify(this.usersService.me));
     // });
     // .toPromise()
     // .then(x => x[0]);
 
-    // return this.usersService.findAll();
+    return this.usersService.findAll();
   }
 }
