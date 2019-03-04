@@ -17,7 +17,7 @@ export class UsersController {
 
   @Get()
   async findAll(): Promise<any> {
-    return this.http.get('https://teamwizapp.azurewebsites.net/.auth/me');
+    return this.http.get('https://teamwizapi.azurewebsites.net/.auth/me');
     // .subscribe(x => {
     //   console.log('me: ' + JSON.stringify(this.usersService.me));
     // });
