@@ -20,18 +20,17 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('/api/docs', app, document);
 
-  app.enableCors({
-    // origin: ‘http://localhost:4200’
-    credentials: true,
-    // origin?: boolean | string | RegExp | (string | RegExp)[] | CustomOrigin;
-    // methods?: string | string[];
-    // allowedHeaders?: string | string[];
-    // exposedHeaders?: string | string[];
-    // credentials?: boolean;
-    // maxAge?: number;
-    // preflightContinue?: boolean;
-    // optionsSuccessStatus?: number;
-  });
+  // app.enableCors({
+  //   // origin: ‘http://localhost:4200’
+  //   // origin?: boolean | string | RegExp | (string | RegExp)[] | CustomOrigin;
+  //   // methods?: string | string[];
+  //   // allowedHeaders?: string | string[];
+  //   // exposedHeaders?: string | string[];
+  //   // credentials?: boolean;
+  //   // maxAge?: number;
+  //   // preflightContinue?: boolean;
+  //   // optionsSuccessStatus?: number;
+  // });
   await app.listen(process.env.PORT);
 }
 bootstrap();
