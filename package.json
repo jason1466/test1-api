@@ -3,12 +3,9 @@
   "version": "1.0.0",
   "description": "Nest TypeScript starter repository",
   "license": "MIT",
-  "engines": {
-    "node": "10.14.1"
-  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "format": "prettier --write \"src/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "nodemon",
     "start:debug": "nodemon --config nodemon-debug.json",
@@ -22,35 +19,36 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@nestjs/common": "5.7.3",
-    "@nestjs/core": "5.7.3",
-    "@nestjs/microservices": "5.7.3",
-    "@nestjs/mongoose": "5.2.2",
-    "@nestjs/swagger": "2.5.1",
-    "@nestjs/websockets": "5.7.3",
-    "@types/mongoose": "5.3.20",
-    "class-transformer": "0.2.0",
-    "class-validator": "0.9.1",
-    "mongoose": "5.4.15",
+    "@nestjs/common": "^6.0.4",
+    "@nestjs/core": "^6.0.4",
+    "@nestjs/microservices": "^6.0.4",
+    "@nestjs/mongoose": "6.0.0",
+    "@nestjs/platform-express": "^6.0.4",
+    "@nestjs/swagger": "3.0.2",
+    "@nestjs/websockets": "^6.0.4",
     "reflect-metadata": "0.1.13",
     "rimraf": "2.6.3",
-    "rxjs": "6.4.0"
+    "rxjs": "6.4.0",
+    "swagger-ui-express": "4.0.2",
+    "mongoose": "5.4.20"
   },
   "devDependencies": {
-    "@nestjs/testing": "^5.4.0",
-    "@types/express": "^4.16.0",
-    "@types/jest": "^23.3.13",
-    "@types/node": "^10.12.18",
-    "@types/supertest": "^2.0.7",
-    "jest": "^23.6.0",
-    "nodemon": "^1.18.9",
-    "prettier": "^1.15.3",
-    "supertest": "^3.4.1",
-    "ts-jest": "^23.10.5",
-    "ts-node": "^7.0.1",
-    "tsconfig-paths": "^3.7.0",
-    "tslint": "5.12.1",
-    "typescript": "^3.2.4"
+    "@types/express": "4.16.1",
+    "@types/jest": "24.0.11",
+    "@types/node": "11.12.0",
+    "@types/supertest": "2.0.7",
+    "@nestjs/testing": "6.0.4",
+    "jest": "24.5.0",
+    "nodemon": "1.18.10",
+    "prettier": "1.16.4",
+    "supertest": "4.0.2",
+    "ts-jest": "24.0.0",
+    "ts-node": "8.0.3",
+    "tsconfig-paths": "3.8.0",
+    "tslint": "5.14.0",
+    "typescript": "3.3.4000",
+    "@types/swagger-ui-express": "3.0.0",
+    "@types/mongoose": "5.3.24"
   },
   "jest": {
     "moduleFileExtensions": ["js", "json", "ts"],
@@ -61,6 +59,5 @@
     },
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  },
-  "keywords": []
+  }
 }
